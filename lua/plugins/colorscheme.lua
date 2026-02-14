@@ -1,12 +1,21 @@
+-- Tokyonight Transparent Colorscheme
+-- return {
+--   {
+--     "folke/tokyonight.nvim",
+--     opts = {
+--       transparent = true,
+--       styles = {
+--         sidebars = "transparent",
+--         floats = "transparent",
+--       },
+--     },
+--   },
+-- }
+
+-- Catppuccin colorscheme
 return {
-  {
-    "folke/tokyonight.nvim",
+    "LazyVim/LazyVim",
     opts = {
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-        floats = "transparent",
-      },
+      colorscheme = "catppuccin-mocha",
     },
-  },
-}
+  }
