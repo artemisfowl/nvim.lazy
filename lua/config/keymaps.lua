@@ -45,3 +45,7 @@ vim.keymap.set("n", "<S-m>", "<cmd>Lspsaga hover_doc<cr>", { desc = "Show Docume
 
 -- Undo tree
 vim.keymap.set("n", "<F2>", "<cmd>Atone toggle<cr>", { desc = "Undo Tree" })
+
+-- config/keymaps.lua
+vim.keymap.set("n", "<leader>ks", ":set list!<CR>", { desc = "Toggle WhiteSpace" })
+

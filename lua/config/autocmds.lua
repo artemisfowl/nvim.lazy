@@ -54,3 +54,20 @@ vim.cmd([[
   :nnoremap <F10> "=strftime("%a, %d %b %Y %H:%M:%S %z") . " : "<CR>P
   :inoremap <F10> <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z") . " : "<CR>
 ]])
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = vim.api.nvim_create_augroup("LazyVimTrimWhitespace", { clear = true }),
+  pattern = "*", -- Apply to all file types
+  callback = function()
+    -- Save cursor position to restore later
+    local curpos = vim.api.nvim_win_get_cursor(0)
+    -- Search and replace trailing whitespaces with nothing
+    vim.cmd([[keeppatterns %s/\s\+$//e]])
+    -- Restore cursor position
+    vim.api.nvim_win_set_cursor(0, curpos)
+  end,
+  desc = "Trim trailing white spaces on save",
+})
+
+vim.cmd([[set clipboard+=unnamedplus]])
+
