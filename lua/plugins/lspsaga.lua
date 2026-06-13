@@ -22,6 +22,12 @@ return {
         border = 'rounded',
         auto_preview = true,
       },
+      lightbulb = {
+        enable = false,
+        sign = false,
+        sign_priority = 40,
+        virtual_text = false,
+      }
     }
   end,
   dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
